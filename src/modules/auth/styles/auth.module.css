@@ -1,0 +1,283 @@
+/**
+ * Auth Module Styles
+ * Estilos encapsulados del módulo de autenticación
+ * Usa CSS Modules para evitar colisiones de estilos
+ */
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  background: white;
+  padding: 20px;
+}
+
+.formContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 48px 44px;
+  width: 100%;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 32px 0;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+
+.errorAlert {
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 28px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorIcon {
+  display: none;
+}
+
+.successIcon {
+  font-size: 64px;
+  text-align: center;
+  margin: 24px 0;
+  color: #3bba7d;
+  animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.errorAlert p {
+  margin: 0;
+  font-size: 14px;
+  color: #c33;
+  line-height: 1.5;
+}
+
+.formGroup {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.helperText {
+  font-size: 12px;
+  color: #999;
+  display: block;
+  margin-top: 6px;
+}
+
+.forgotPassword {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #3bba7d;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.forgotPassword:hover {
+  color: #2d9b68;
+  text-decoration: underline;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.signupLink {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.nameRow .formGroup {
+  margin-bottom: 0;
+}
+
+.otpActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: #3bba7d;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  padding: 4px 0;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.link:hover:not(:disabled) {
+  color: #2d9b68;
+  text-decoration: underline;
+}
+
+.link:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 40px 36px;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .formGroup {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile (480px - 600px) */
+@media (max-width: 600px) {
+  .form {
+    padding: 16px;
+    min-height: calc(100vh - 80px);
+  }
+
+  .formContainer {
+    padding: 32px 24px;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .formGroup {
+    margin-bottom: 18px;
+  }
+
+  .errorAlert {
+    padding: 12px 14px;
+    margin-bottom: 20px;
+  }
+
+  .errorIcon {
+    font-size: 18px;
+  }
+
+  .submitButton {
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
+
+  .nameRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .nameRow .formGroup {
+    margin-bottom: 18px;
+  }
+
+  .otpActions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 16px;
+    gap: 0;
+  }
+
+  .otpActions .link {
+    text-align: center;
+    white-space: normal;
+    padding: 10px 0;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .otpActions .link:first-child {
+    border-top: none;
+  }
+}
+
+/* Small mobile (320px - 380px) */
+@media (max-width: 380px) {
+  .formContainer {
+    padding: 28px 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .signupLink {
+    font-size: 13px;
+  }
+}
