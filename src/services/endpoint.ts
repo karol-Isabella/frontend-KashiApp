@@ -3,7 +3,7 @@
  * Centraliza todas las rutas de la API del backend
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export const ENDPOINTS = {
   AUTH: {

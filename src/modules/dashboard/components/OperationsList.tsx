@@ -19,12 +19,7 @@ const MOCK_OPERATIONS: Operation[] = [
   { id: '4', type: 'Ajustes', title: 'Califica Nuestra app', description: 'Rate the application' },
   { id: '5', type: 'Transacciones', title: 'Tus llaves', description: 'View your keys' },
   { id: '6', type: 'Transacciones', title: 'Recibir plata', description: 'Receive money' },
-  { id: '7', type: 'Transacciones', title: 'Pagar Facturas', description: 'Pay bills' },
-  { id: '8', type: 'Transacciones', title: 'Pagar Créditos', description: 'Pay credits' },
   { id: '9', type: 'Transacciones', title: 'Ver saldos y movimientos', description: 'View balance' },
-  { id: '10', type: 'Transacciones', title: 'Agregar Tarjeta', description: 'Add card' },
-  { id: '11', type: 'Explorar', title: 'Recargar Celular', description: 'Recharge mobile' },
-  { id: '12', type: 'Explorar', title: 'Otros', description: 'Other options' },
 ];
 
 export const OperationsList: React.FC<OperationsListProps> = ({
@@ -67,9 +62,9 @@ export const OperationsList: React.FC<OperationsListProps> = ({
         </div>
 
         <div className={styles.viewOptions}>
-          <button className={styles.viewButton}>☰</button>
-          <button className={styles.viewButton}>◻</button>
-          <button className={styles.viewButton}>📅</button>
+          <button className={styles.viewButton}></button>
+          <button className={styles.viewButton}></button>
+          <button className={styles.viewButton}></button>
         </div>
       </div>
 

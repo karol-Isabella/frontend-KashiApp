@@ -17,8 +17,8 @@ interface ApiResponse<T> {
 class ApiClient {
   private baseURL: string;
 
-  //constructor con opcion de baseURL para facilitar testing
-  constructor(baseURL: string = 'http://localhost:8080/api/v1') {
+  //constructor con la variable de entorno para la URL base de la API
+  constructor(baseURL: string) {
     this.baseURL = baseURL;
   }
 
@@ -122,4 +122,4 @@ class ApiClient {
   }
 }
 
-export const apiClient = new ApiClient(import.meta.env.VITE_API_URL || 'http://localhost:8080/api/v1');
+export const apiClient = new ApiClient(import.meta.env.VITE_API_URL);
