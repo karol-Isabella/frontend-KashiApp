@@ -50,22 +50,15 @@ export const OperationsList: React.FC<OperationsListProps> = ({
         <div className={styles.searchContainer}>
           <input
             type="text"
-            placeholder="Search tickets..."
             className={styles.searchInput}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button className={styles.filterButton}>
-            <span>⚙️</span>
-            <span>Filter</span>
+            <span>Filtrar</span>
           </button>
         </div>
 
-        <div className={styles.viewOptions}>
-          <button className={styles.viewButton}></button>
-          <button className={styles.viewButton}></button>
-          <button className={styles.viewButton}></button>
-        </div>
       </div>
 
       {/* Operations List */}
@@ -87,7 +80,7 @@ export const OperationsList: React.FC<OperationsListProps> = ({
 
         {filteredOperations.length === 0 && (
           <div className={styles.emptyState}>
-            <p>No operations found</p>
+            <p>No se han encontrado operaciones</p>
           </div>
         )}
       </div>

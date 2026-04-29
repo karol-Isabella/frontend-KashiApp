@@ -18,6 +18,12 @@ export interface UserResponseDTO {
   username: string;
   numberPhone: string;
   accountStatus: string;
+  twoFactorToken?: {
+    id: string;
+    secret?: string;
+    isEnabled: boolean;
+    createdAt?: string;
+  };
 }
 
 export class AuthService {

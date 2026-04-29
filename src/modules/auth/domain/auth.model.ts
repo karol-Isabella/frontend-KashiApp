@@ -35,12 +35,20 @@ export interface UserAuth {
   accountStatus: string;
 }
 
+export interface TwoFactorToken {
+  id: string;
+  secret?: string;
+  isEnabled: boolean;
+  createdAt?: string;
+}
+
 export interface UserProfile {
   id: string;
   email: string;
   username: string;
   numberPhone: string;
   accountStatus: string;
+  twoFactorToken?: TwoFactorToken;
 }
 
 export interface AuthState {

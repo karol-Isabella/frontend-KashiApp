@@ -96,7 +96,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
         isLoginLocked: false,
       }));
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Error during login';
+      const errorMessage = error instanceof Error ? error.message : 'Error al iniciar sesión';
       const attempts = Math.min(state.loginAttempts + 1, 5);
       const locked = attempts >= 5;
 
@@ -129,7 +129,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
 
       return mappedUser;
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Error during registration';
+      const errorMessage = error instanceof Error ? error.message : 'Error al registrar el usuario';
       setState((prev) => ({
         ...prev,
         isLoading: false,
@@ -160,7 +160,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
         isLoginLocked: false,
       });
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Invalid OTP';
+      const errorMessage = error instanceof Error ? error.message : 'OTP inválido';
       setState((prev) => ({
         ...prev,
         isLoading: false,
