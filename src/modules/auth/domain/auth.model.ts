@@ -33,7 +33,14 @@ export interface UserAuth {
   username: string;
   numberPhone: string;
   accountStatus: string;
+}
 
+export interface UserProfile {
+  id: string;
+  email: string;
+  username: string;
+  numberPhone: string;
+  accountStatus: string;
 }
 
 export interface AuthState {
