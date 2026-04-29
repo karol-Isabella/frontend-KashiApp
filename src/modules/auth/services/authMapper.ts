@@ -20,5 +20,11 @@ export const mapUserProfileFromApi = (dto: UserResponseDTO): UserProfile => {
     username: dto.username,
     numberPhone: dto.numberPhone,
     accountStatus: dto.accountStatus,
+    twoFactorToken: dto.twoFactorToken ? {
+      id: dto.twoFactorToken.id,
+      secret: dto.twoFactorToken.secret,
+      isEnabled: dto.twoFactorToken.isEnabled,
+      createdAt: dto.twoFactorToken.createdAt,
+    } : undefined,
   };
 };

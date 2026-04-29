@@ -70,17 +70,41 @@ class ApiClient {
         if (response.status === 401) {
           this.removeAuthToken();
         }
-        throw new Error(`HTTP Error: ${response.status}`);
+
+        const errorText = await response.text();
+        let errorMessage = `Error HTTP: ${response.status}`;
+
+        try {
+          const errorData = errorText ? JSON.parse(errorText) : null;
+          if (errorData && typeof errorData.message === 'string') {
+            errorMessage = errorData.message;
+          }
+        } catch {
+          // Ignorar errores de parseo de JSON y usar el mensaje genérico
+        }
+
+        throw new Error(errorMessage);
       }
 
-      const data = await response.json();
+      let data: T;
+      try {
+        data = await response.json();
+      } catch {
+        data = {} as T;
+      }
+
       return {
         status: response.status,
         data,
-        message: data.message,
+        message: (data as any)?.message,
       };
     } catch (error) {
       console.error('API Request Error:', error);
+
+      if (error instanceof TypeError) {
+        throw new Error('No se pudo conectar con el servidor. Verifica tu conexión y vuelve a intentarlo.');
+      }
+
       throw error;
     }
   }
