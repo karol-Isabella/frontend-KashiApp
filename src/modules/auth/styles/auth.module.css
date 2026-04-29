@@ -8,9 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 100px);
+  width: 100%;
+  flex: 1;
   background: white;
   padding: 20px;
+  min-height: 100%;
+  box-sizing: border-box;
 }
 
 .formContainer {
@@ -18,6 +21,18 @@
   border-radius: 12px;
   padding: 48px 44px;
   width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.errorAlert {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
@@ -117,6 +132,8 @@
 
 .submitButton {
   width: 100%;
+  display: flex;
+  justify-content: center;
   margin-top: 32px;
   margin-bottom: 24px;
 }
