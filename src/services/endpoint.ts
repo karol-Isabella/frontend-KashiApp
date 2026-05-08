@@ -12,8 +12,14 @@ export const ENDPOINTS = {
     REFRESH: `${API_BASE_URL}/auth/refresh`,
     REGISTER: `${API_BASE_URL}/auth/register`,
     VERIFY_OTP: `${API_BASE_URL}/auth/verify-otp`,
+
   },
   DASHBOARD: {
     ROOT: `${API_BASE_URL}/dashboard`,
+  },
+  USER: {
+    PROFILE: `${API_BASE_URL}/users/me`,
+    BLOCK_PROFILE: `${API_BASE_URL}/users/me/block`,
+    DELETE_PROFILE: `${API_BASE_URL}/users/me/delete`,
   },
 } as const;

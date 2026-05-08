@@ -23,7 +23,9 @@ const DEFAULT_ITEMS: SidebarItem[] = [
   { id: 'transacciones', label: 'Transacciones' },
   { id: 'explorar', label: 'Explorar' },
   { id: 'solicitudes', label: 'Solicitudes' },
+  { id: 'perfil', label: 'Tu perfil' },
 ];
+
 
 export const Sidebar: React.FC<SidebarProps> = ({
   items = DEFAULT_ITEMS,
