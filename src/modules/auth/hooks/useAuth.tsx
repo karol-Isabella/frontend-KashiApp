@@ -8,6 +8,7 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 import { LoginCredentials, RegisterCredentials, VerifyOtpCredentials, AuthState, UserAuth } from '../domain/auth.model';
 import { authService } from '../services/authService';
 import { mapAuthFromApi, mapUserProfileFromApi } from '../services/authMapper';
+import { apiClient } from '../../../services/apiClient';
 
 const INITIAL_STATE: AuthState = {
   isAuthenticated: false,
@@ -39,6 +40,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
     const savedAttempts = Number(localStorage.getItem('loginAttempts') || '0');
 
     if (token) {
+      apiClient.setToken(token);
       let user: UserAuth | null = null;
 
       if (userJson) {
@@ -147,6 +149,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
       const mappedAuth = mapAuthFromApi(response);
 
       localStorage.setItem('accessToken', mappedAuth.accessToken);
+      apiClient.setToken(mappedAuth.accessToken);
       localStorage.removeItem('user');
 
       setState({

@@ -131,8 +131,13 @@ class ApiClient {
     return this.request<T>(endpoint, { ...options, method: 'PUT', body });
   }
 
-  async delete<T>(endpoint: string, options?: RequestOptions): Promise<ApiResponse<T>> {
-    return this.request<T>(endpoint, { ...options, method: 'DELETE' });
+  //Metodo para realizar petiiciones Delete, sin body necesariamente
+  async delete<T>(
+    endpoint: string,
+    body?: Record<string, unknown>,
+    options?: RequestInit
+  ): Promise<ApiResponse<T>> {
+    return this.request<T>(endpoint, { ...options, method: 'DELETE', body });
   }
 
   // Métodos para gestionar el token de autenticación JWT

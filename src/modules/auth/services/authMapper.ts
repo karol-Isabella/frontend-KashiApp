@@ -6,13 +6,14 @@
 import { AuthResponse, UserProfile } from '../domain/auth.model';
 import { AuthTokenDTO, UserResponseDTO } from './authService';
 
+// Mapea el DTO de autenticación del backend al modelo de autenticación del frontend
 export const mapAuthFromApi = (dto: AuthTokenDTO): AuthResponse => {
   return {
     accessToken: dto.token,
     user: null,
   };
 };
-
+// Mapea el DTO de usuario del backend al modelo de perfil de usuario del frontend
 export const mapUserProfileFromApi = (dto: UserResponseDTO): UserProfile => {
   return {
     id: dto.id,
