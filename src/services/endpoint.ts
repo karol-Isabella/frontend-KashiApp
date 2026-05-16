@@ -22,4 +22,8 @@ export const ENDPOINTS = {
     BLOCK_PROFILE: `${API_BASE_URL}/users/me/block`,
     DELETE_PROFILE: `${API_BASE_URL}/users/me/delete`,
   },
+  WALLET: {
+    BALANCE: `${API_BASE_URL}/wallet/balance`,
+    VISIBILITY: `${API_BASE_URL}/wallet/visibility`,
+  },
 } as const;

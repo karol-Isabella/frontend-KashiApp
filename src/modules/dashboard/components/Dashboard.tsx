@@ -9,6 +9,7 @@ import { OperationsList } from './OperationsList';
 import { useAuth } from '../../auth/hooks/useAuth';
 import styles from '../styles/dashboard.module.css';
 import { Profile } from '../../user/components/Profile';
+import { BalanceCard } from '../../wallet/components/BalanceCard';
 
 interface DashboardSidebarItem {
   id: string;
@@ -78,15 +79,7 @@ export const Dashboard: React.FC = () => {
                 : 'Buscar Operación'}
             </h2>
 
-            <div className={styles.balanceCard}>
-              <span className={styles.balanceLabel}>
-                Tu Monto
-              </span>
-
-              <span className={styles.balanceAmount}>
-                {userBalance.amount.toLocaleString()}
-              </span>
-            </div>
+            <BalanceCard />
           </div>
 
           {/* Render dinámico */}
