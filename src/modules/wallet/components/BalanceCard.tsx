@@ -32,7 +32,7 @@ export const BalanceCard: React.FC = () => {
         onClick={toggleVisibility}
         style={{ padding: '6px 12px', fontSize: '12px', height: 'auto' }}
       >
-        {wallet.isVisible ? "Esconder" : "Mostar Saldo"}
+        {wallet.isVisible ? "Esconder" : "Mostrar Saldo"}
       </Button>
     </div>
   );
